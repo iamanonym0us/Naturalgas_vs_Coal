@@ -4,7 +4,7 @@ import dash_html_components as html
 import plotly.graph_objs as go
 import pandas as pd
 
-########### Define your variables
+## Defining variables
 temp = pd.read_csv('Coal_Naturalgas_Generation_Data.csv',parse_dates=['Month'])
 hovertexts0 = []
 hovertexts1 = []
@@ -17,7 +17,7 @@ mytitle='Coal & Naturalgas generation Data'
 tabtitle='Coal & Gas Data'
 myheading=''
 
-########### Set up the chart
+## Setting up chart
 trace0 = go.Scatter(x=temp.Month,y=temp.natural_gas_thousand_megawatthours,mode='lines',name='Natural gas',showlegend=True,hoverinfo='x+text',hovertext=hovertexts0)
 trace1 = go.Scatter(x=temp.Month,y=temp.coal_thousand_megawatthours,mode='lines',name='Coal',hoverinfo='x+text',hovertext=hovertexts1)
 data = [trace0,trace1]
@@ -25,13 +25,13 @@ layout = go.Layout(title = "Coal and Natural Gas Electricity Generation", xaxis 
 fig = go.Figure(data=data, layout=layout)
 
 
-########### Initiate the app
+## Initiating the app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 app.title=tabtitle
 
-########### Set up the layout
+## Setting up the layout
 app.layout = html.Div(children=[
     html.H1(myheading),
     dcc.Graph(
