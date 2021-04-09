@@ -15,7 +15,7 @@ color1='darkred'
 color2='orange'
 mytitle='Coal & Naturalgas generation Data'
 tabtitle='Coal & Gas Data'
-myheading='pssssssssssssssss'
+myheading=''
 
 ########### Set up the chart
 trace0 = go.Scatter(x=temp.Month,y=temp.natural_gas_thousand_megawatthours,mode='lines',name='Natural gas',showlegend=True,hoverinfo='x+text',hovertext=hovertexts0)
